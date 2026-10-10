@@ -1,0 +1,474 @@
+\documentclass[12pt,a4paper]{article}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[
+    a4paper,
+    top=1.35cm,
+    bottom=1.25cm,
+    left=1.65cm,
+    right=1.65cm
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{ragged2e}
+
+% ============================================================
+% COLORS
+% ============================================================
+\definecolor{GEUBlue}{RGB}{43,91,145}
+\definecolor{GEUBannerBlue}{RGB}{0,102,148}
+\definecolor{GEUYellow}{RGB}{255,201,38}
+\definecolor{InstructionGrey}{RGB}{125,125,125}
+
+% ============================================================
+% GENERAL SETTINGS
+% ============================================================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1.1}
+
+% ============================================================
+% HEADER / FOOTER
+% ============================================================
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{%
+    \fontsize{9.5}{11}\selectfont
+    BTech(CSE)DSCPP-III-2026-T183
+}
+
+\fancyhead[R]{%
+    \fontsize{9.5}{11}\selectfont
+    PHASE-II PROJECT PROGRESS
+}
+
+\fancyfoot[R]{%
+    \fontsize{9.5}{11}\selectfont
+    Page \thepage
+}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\headheight}{18pt}
+\setlength{\headsep}{0.45cm}
+\setlength{\footskip}{0.55cm}
+
+% ============================================================
+% BOTTOM YELLOW LINE
+% ============================================================
+\AddToShipoutPictureBG{%
+\begin{tikzpicture}[remember picture,overlay]
+    \fill[GEUYellow]
+    (current page.south west)
+    rectangle
+    ([yshift=0.14cm]current page.south east);
+\end{tikzpicture}
+}
+
+% ============================================================
+% CUSTOM COMMANDS (AUTO-EXPANDING BOX TO PREVENT OVERLAPPING)
+% ============================================================
+\newcommand{\sectiontitle}[1]{%
+    {\color{GEUBlue}%
+    \fontsize{15}{18}\selectfont\bfseries #1}%
+}
+
+\newcommand{\instruction}[1]{%
+    {\color{InstructionGrey}%
+    \fontsize{9}{11}\selectfont #1}%
+}
+
+\newcommand{\answerboxauto}[1]{%
+    \begin{tabularx}{\textwidth}{|>{\RaggedRight\arraybackslash}X|}
+        \hline
+        \vspace{2pt}
+        \fontsize{10}{13}\selectfont #1
+        \vspace{4pt}\\
+        \hline
+    \end{tabularx}%
+}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+\begin{document}
+
+% ============================================================
+% PAGE 1
+% ============================================================
+
+\vspace*{-0.25cm}
+
+% PHOTO 1: GRAPHIC ERA LOGO
+\begin{center}
+\IfFileExists{geulogo.png}{%
+    \includegraphics[width=8.0cm,height=1.85cm,keepaspectratio]{geulogo.png}%
+}{%
+    \framebox(240,40){\bfseries GRAPHIC ERA LOGO (geulogo.png)}%
+}
+\end{center}
+
+\vspace{0.25cm}
+
+\noindent
+\colorbox{GEUBannerBlue}{%
+\parbox{\dimexpr\textwidth-2\fboxsep\relax}{
+    \vspace{0.12cm}
+    {\color{GEUYellow}
+    \fontsize{15}{18}\selectfont
+    \bfseries
+    PROJECT AND TEAM INFORMATION}
+    \vspace{0.12cm}
+}}
+
+\vspace{0.35cm}
+
+% PROJECT TITLE
+\sectiontitle{Project Title}
+
+\vspace{0.02cm}
+\vspace{0.15cm}
+
+\answerboxauto{\textbf{CheckMate: Intelligent Chess Game Using Data Structures}}
+
+\vspace{0.35cm}
+
+% STUDENT INFORMATION TABLE
+\noindent
+\begin{tabularx}{\textwidth}{|>{\RaggedRight\arraybackslash}p{0.67\textwidth}|>{\RaggedRight\arraybackslash}X|}
+\hline
+\begin{minipage}[t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team Name:} The Binary Guild\\[2pt]
+\textbf{Team id:} DSCPP-III-2026-T279
+\vspace{1.5mm}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Domain:}\\[2pt]
+Data Structures \& Algorithms (DSA)
+\vspace{1.5mm}
+\end{minipage}
+\\
+\hline
+% MEMBER 1 (TEAM LEAD)
+\begin{minipage}[t][2.75cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 1 (Team Lead)}\\[2pt]
+Salar, Arnav\\
+Student ID:2510010793\\
+Email: 2510010793@geu.ac.in
+\end{minipage}
+&
+\begin{minipage}[t][2.75cm][t]{\linewidth}
+\vspace{1.5mm}
+\IfFileExists{arnav.png}{%
+    \includegraphics[width=2.55cm,height=2.35cm,keepaspectratio]{arnav.png}%
+}{%
+    \IfFileExists{member1.png}{%
+        \includegraphics[width=2.55cm,height=2.35cm,keepaspectratio]{member1.png}%
+    }{%
+        \framebox(65,55){\fontsize{8}{9}\selectfont arnav.png}%
+    }%
+}
+\end{minipage}
+\\
+\hline
+% MEMBER 2
+\begin{minipage}[t][2.75cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 2}\\[2pt]
+Nishav\\
+Student ID: 2510012485\\
+Email: 2510012485@geu.ac.in
+\end{minipage}
+&
+\begin{minipage}[t][2.75cm][t]{\linewidth}
+\vspace{1.5mm}
+\IfFileExists{nishav.png}{%
+    \includegraphics[width=2.55cm,height=2.35cm,keepaspectratio]{nishav.png}%
+}{%
+    \IfFileExists{member2.png}{%
+        \includegraphics[width=2.55cm,height=2.35cm,keepaspectratio]{member2.png}%
+    }{%
+        \framebox(65,55){\fontsize{8}{9}\selectfont nishav.png}%
+    }%
+}
+\end{minipage}
+\\
+\hline
+% MEMBER 3
+\begin{minipage}[t][2.75cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 3}\\[2pt]
+Painuly, Arush\\
+Student ID: 2510011635\\
+Email: 2510011635@geu.ac.in
+\end{minipage}
+&
+\begin{minipage}[t][2.75cm][t]{\linewidth}
+\vspace{1.5mm}
+\IfFileExists{arush.png}{%
+    \includegraphics[width=2.55cm,height=2.35cm,keepaspectratio]{arush.png}%
+}{%
+    \IfFileExists{member3.png}{%
+        \includegraphics[width=2.55cm,height=2.35cm,keepaspectratio]{member3.png}%
+    }{%
+        \framebox(65,55){\fontsize{8}{9}\selectfont arush.png}%
+    }%
+}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+
+\clearpage
+
+% ============================================================
+% PAGE 2
+% ============================================================
+
+\vspace*{-0.25cm}
+
+\noindent
+\colorbox{GEUBannerBlue}{%
+\parbox{\dimexpr\textwidth-2\fboxsep\relax}{
+    \vspace{0.14cm}
+    {\color{GEUYellow}
+    \fontsize{14.5}{18}\selectfont
+    \bfseries
+    PHASE-II PROJECT PROGRESS DESCRIPTION (35 pts)}
+    \vspace{0.14cm}
+}}
+
+\vspace{0.45cm}
+
+% PROJECT ABSTRACT
+\sectiontitle{Project Abstract (2 pts)}
+
+\vspace{0.02cm}
+\vspace{0.15cm}
+
+\answerboxauto{CheckMate is an interactive chess application developed to show the practical utility of foundational Data Structures and Algorithms in a complete desktop application. Rather than using pre-packaged libraries such as the C++ Standard Template Library (STL), all core structures are written manually in C using direct pointers and explicit dynamic memory management. The application uses an 8x8 two-dimensional array for instant board access, a pointer-based stack for LIFO move undos, a doubly linked list for chronological game history logging, a FIFO queue for buffering move commands, and an FNV-1a hash table for board repetition detection. A single-player AI opponent operates using minimax evaluation with alpha-beta cutoffs. To meet our mentor's requirements, a 3D graphical interface built with Raylib is linked directly over this engine to support visual board interaction and mouse-based move input for our Phase-II evaluation.}
+
+\vspace{0.55cm}
+
+% UPDATED PROJECT APPROACH
+\sectiontitle{Updated Project Approach and Architecture (2 pts)}
+
+\vspace{0.02cm}
+\vspace{0.15cm}
+
+\answerboxauto{The project follows a modular three-tier structure cleanly separating manual C data structures from the C++ game engine and the graphical presentation layer:
+\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+    \item \textbf{Data Structure Core (Pure C):} Modules include \texttt{undo\_stack.c} (LIFO stack rollback), \texttt{move\_history.c} (doubly linked list move log), \texttt{event\_queue.c} (FIFO command buffering), and \texttt{board\_hash.c} (FNV-1a hash table for threefold repetition tracking).
+    \item \textbf{Game Rules \& AI Layer (C++):} \texttt{chess\_rules.cpp} controls directional ray casting, check/checkmate detection, and legal move filtering; \texttt{minimax.cpp} handles tree search with material scoring and MVV-LVA move ordering.
+    \item \textbf{Presentation Layer (Raylib):} A dedicated graphical module (\texttt{gui\_3d.cpp}) displays the 8x8 board in 3D perspective, handles mouse ray-plane intersection to translate screen clicks into board tiles, and displays on-screen DSA telemetry.
+\end{itemize}
+All modules run locally on the desktop without network protocols or external web APIs, eliminating external communication latency and third-party dependencies.}
+
+\clearpage
+
+% ============================================================
+% PAGE 3
+% ============================================================
+
+\vspace*{-0.25cm}
+
+% TASKS COMPLETED
+\sectiontitle{Tasks Completed (7 pts)}
+
+\vspace{0.02cm}
+\vspace{0.15cm}
+
+\begin{tabularx}{\textwidth}{
+|>{\RaggedRight\arraybackslash}X
+|>{\RaggedRight\arraybackslash}p{0.36\textwidth}|
+}
+\hline
+\textbf{Task Completed} &
+\textbf{Team Member}\\
+\hline
+Designed system modular layout, 8x8 matrix representation, ray casting movement routines, king safety validation, recursive minimax with alpha-beta cutoffs, and integrated the 3D Raylib interface with mouse raycasting. &
+Arnav Salar (Lead)\\
+\hline
+Specified move data structures, built the pointer-based LIFO Undo Stack (\texttt{undo\_stack.c}), and implemented the custom Doubly Linked List for move logging with search functions (\texttt{move\_history.c}). &
+Nishav\\
+\hline
+Implemented the manual FIFO Event Queue (\texttt{event\_queue.c}), MVV-LVA move ordering logic, coordinate parsing, and input boundary validation. &
+Arush Painuly\\
+\hline
+\end{tabularx}
+
+\vspace{0.50cm}
+
+% CHALLENGES
+\sectiontitle{Challenges/Roadblocks (7 pts)}
+
+\vspace{0.02cm}
+\vspace{0.15cm}
+
+\answerboxauto{\textbf{1. 3D Mouse Tile Mapping:} Converting 2D screen mouse clicks onto an angled 3D plane was initially inaccurate. \textit{Solution:} Implemented mathematical ray-plane intersection at $Y=0$ using Raylib's \texttt{GetMouseRay}, resolving exact board tile coordinates from camera hit points.\\[3pt]
+\textbf{2. C-to-C++ Linker Interfacing:} Linking C source files containing dynamic allocations to C++ graphical code caused linkage and casting errors. \textit{Solution:} Encapsulated C header declarations using \texttt{extern "C"} in \texttt{dsa.h} and standardized common data structures.\\[3pt]
+\textbf{3. Search Depth and Branching Latency:} Deeper minimax recursion slowed real-time response. \textit{Solution:} Implemented MVV-LVA move sorting prior to alpha-beta pruning, ensuring early branch cutoffs and responsive play.}
+
+\vspace{0.50cm}
+
+% TASKS PENDING
+\sectiontitle{Tasks Pending (7 pts)}
+
+\vspace{0.02cm}
+\vspace{0.15cm}
+
+\begin{tabularx}{\textwidth}{
+|>{\RaggedRight\arraybackslash}X
+|>{\RaggedRight\arraybackslash}p{0.36\textwidth}|
+}
+\hline
+\textbf{Task Pending} &
+\textbf{Team Member (to complete the task)}
+\\
+\hline
+Import custom low-poly 3D piece models and implement pawn promotion selection dialogs. &
+Arnav Salar (Lead)\\
+\hline
+Add file persistence to export and load game transcripts in standard PGN notation. &
+Nishav\\
+\hline
+Implement turn timer logic using the queue and prepare test scripts for validation. &
+Arush Painuly\\
+\hline
+Execute final integration passes, test boundary cases, and prepare for the evaluation viva. &
+All Members\\
+\hline
+\end{tabularx}
+
+\clearpage
+
+% ============================================================
+% PAGE 4
+% ============================================================
+
+\vspace*{-0.25cm}
+
+% PROJECT OUTCOME
+\sectiontitle{Project Outcome/Deliverables (2 pts)}
+
+\vspace{0.02cm}
+\vspace{0.15cm}
+
+\answerboxauto{The key deliverables for this milestone comprise:
+\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+    \item A fully functional, rules-compliant chess engine handling valid piece movements, path blocking, check detection, and checkmate verification.
+    \item A suite of custom C data structure libraries (Stack, Doubly Linked List, Queue, Hash Table) written from scratch without standard template libraries.
+    \item A single-player AI opponent running recursive minimax search with alpha-beta pruning and heuristic move ordering.
+    \item An interactive 3D Graphical User Interface developed with Raylib featuring mouse raycasting, board square highlights, and on-screen DSA telemetry.
+    \item A unified build pipeline and verification harness prepared for the live evaluation demonstration.
+\end{itemize}}
+
+\vspace{0.55cm}
+
+% PROGRESS OVERVIEW
+\sectiontitle{Progress Overview (2 pts)}
+
+\vspace{0.02cm}
+\vspace{0.15cm}
+
+\answerboxauto{\textbf{Estimated Milestone Completion: 85\%}\\[3pt]
+\textbf{Ahead of Schedule:} Both the core chess rule engine and the custom C data structure implementations (Stack, Linked List, Queue, Hash Table) are built and validated. Minimax decision-making with alpha-beta pruning is working. The 3D Raylib interface with mouse raycasting is linked and operational for the evaluation on October 19.\\[3pt]
+\textbf{Planned Next:} PGN file transcript export, turn timer handling, and detailed 3D model assets are scheduled for subsequent sprints.\\[3pt]
+\textbf{Current Focus:} Final integration testing, boundary case verification, and viva demonstration rehearsal.}
+
+\clearpage
+
+% ============================================================
+% PAGE 5
+% ============================================================
+
+\vspace*{-0.25cm}
+
+% CODEBASE
+\sectiontitle{Codebase Information (2 pts)}
+
+\vspace{0.02cm}
+\vspace{0.15cm}
+
+\answerboxauto{\textbf{Language:} C / C++ \quad \textbf{Repository URL:} \texttt{https://github.com/arnavsalar07/College-PBL-Report}\\[2pt]
+\textbf{Main Branch:} \texttt{main / phase2-gui}\\[3pt]
+\textbf{Key Commits \& Modules:}
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
+    \item \texttt{c9a12e8} -- Built pure C manual DSA modules (\texttt{undo\_stack.c}, \texttt{move\_history.c}, \texttt{event\_queue.c}).
+    \item \texttt{e417bd2} -- Completed 2D board ray casting rules and copy-make check detection engine (\texttt{chess\_rules.cpp}).
+    \item \texttt{72fbc04} -- Added FNV-1a position hashing (\texttt{board\_hash.c}) and recursive Minimax with $\alpha$-$\beta$ pruning (\texttt{minimax.cpp}).
+    \item \texttt{f023a1a} -- Integrated Raylib 3D perspective board and mouse ray-plane picking (\texttt{gui\_3d.cpp}).
+\end{itemize}}
+
+\vspace{0.45cm}
+
+% TESTING
+\sectiontitle{Testing and Validation Status (2 pts)}
+
+\vspace{0.02cm}
+\vspace{0.15cm}
+
+\begin{tabularx}{\textwidth}{
+|>{\RaggedRight\arraybackslash}p{0.33\textwidth}
+|>{\RaggedRight\arraybackslash}p{0.20\textwidth}
+|>{\RaggedRight\arraybackslash}X|
+}
+\hline
+\textbf{Test Type} &
+\textbf{Status (Pass/Fail)} &
+\textbf{Notes}
+\\
+\hline
+Manual DSA Unit Tests (Stack, List, Queue, Hash) &
+\textbf{PASS} &
+Verified $O(1)$ push/pop and enqueue/dequeue operations; confirmed no dynamic memory leaks.\\
+\hline
+Rule Validation \& Ray Casting &
+\textbf{PASS} &
+Validated path-blocking for sliding pieces, illegal self-check prevention, and pawn promotion.\\
+\hline
+Minimax Evaluation \& AI &
+\textbf{PASS} &
+Tree depth bounds (depths 1--3) verified; node pruning cutoffs operating properly under MVV-LVA.\\
+\hline
+3D GUI Mouse Raycasting &
+\textbf{PASS} &
+Mouse clicks accurately map to $8\times 8$ board squares; pieces move correctly with visual feedback.\\
+\hline
+\end{tabularx}
+
+\vspace{0.45cm}
+
+% DELIVERABLES PROGRESS
+\sectiontitle{Deliverables Progress (2 pts)}
+
+\vspace{0.02cm}
+\vspace{0.15cm}
+
+\answerboxauto{%
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
+    \item \textbf{Core Chess Rules \& 2D Board:} \textbf{Completed} (Ray casting, check detection, legal move validation).
+    \item \textbf{C-Based Custom DSA Libraries:} \textbf{Completed} (Stack, Linked List, Queue, Hash Table).
+    \item \textbf{Minimax AI Opponent Engine:} \textbf{Completed} (Depth-bounded tree traversal, alpha-beta cutoffs).
+    \item \textbf{3D Graphical User Interface:} \textbf{Completed} (Raylib 3D board, mouse picking, and real-time DSA telemetry).
+    \item \textbf{Game Persistence (PGN File I/O):} \textbf{Pending} (Scheduled for subsequent sprint).
+    \item \textbf{Evaluator Live Demonstration:} \textbf{Ready} (Complete build ready for October 19 evaluation).
+\end{itemize}}
+
+\end{document}
